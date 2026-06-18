@@ -31,9 +31,8 @@ public class IngestionDomainService implements IngestMetricUseCase, RegisterSour
     }
 
     @Override
-    public Source register(String name, String description) {
-        Source newSource = Source.create(name, description); 
-        sourceRepository.save(newSource);
-        return newSource;
+    public Source register(Source source) {
+        sourceRepository.save(source);
+        return source;
     }
 }

@@ -11,6 +11,7 @@ public class RegisterSourceHandler {
     }
 
     public Source handle(RegisterSourceCommand command) {
-        return registerSourceUseCase.register(command.name(), command.description());
+        Source source = Source.create(command.name(), command.description());
+        return registerSourceUseCase.register(source);
     }
 }

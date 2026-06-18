@@ -4,5 +4,5 @@ import com.sentinel.ingestion.domain.model.Source;
 
 public interface RegisterSourceUseCase {
 
-    Source register(String name, String description);
+    Source register(Source source);
 }

@@ -3,11 +3,14 @@ server:
 spring:
   application:
     name: ingestion-service
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
   datasource:
-    url: jdbc:postgresql://localhost:5432/sentinel?currentSchema=ingestion
+    url: jdbc:postgresql://localhost:5433/sentinel?currentSchema=ingestion
     username: sentinel
     password: sentinel
   jpa:
+    open-in-view: false
     hibernate:
       ddl-auto: update
     properties:
